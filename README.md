@@ -3,6 +3,8 @@
 *Description:* Updates your Vagrant & Puppet powered server with the latest `apt-get` Package list.
 Installs the latest versions of `yum`, `rpm`, `make` and `curl`.
 
+Module on the [Puppet Forge](https://forge.puppetlabs.com/kaiser/systemupdate).
+
 ## Install
 
 Open your preferred console/terminal/bash/shell
