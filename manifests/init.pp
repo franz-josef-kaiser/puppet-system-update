@@ -29,4 +29,10 @@ class systemupdate {
     onlyif   => 'command -v curl | grep -cim1 "curl"',
     require  => Exec['install-yum']
   }
+  exec { 'install-chkconfig':
+    command => '/usr/bin/apt-get install --yes chkconfig',
+    provider => shell,
+    onlyif   => 'command -v chkconfig | grep -cim1 "chkconfig"',
+    require  => Exec['install-yum']
+  }
 }

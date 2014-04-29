@@ -1,7 +1,13 @@
 # WCM System Update
 
 *Description:* Updates your Vagrant & Puppet powered server with the latest `apt-get` Package list.
-Installs the latest versions of `yum`, `rpm`, `make` and `curl`.
+Installs the latest versions of:
+
+ * `yum`
+ * `rpm`
+ * `make`
+ * `curl`
+ * `chkconfig`
 
 Module on the [Puppet Forge](https://forge.puppetlabs.com/kaiser/systemupdate).
 
@@ -21,4 +27,6 @@ In your main `site.pp` file, simply add.
 
 Nothing else to do.
 
-**License** MIT
+---
+
+**License:** MIT
