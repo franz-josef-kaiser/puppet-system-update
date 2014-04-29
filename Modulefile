@@ -1,5 +1,5 @@
-name 'wcm-system-update'
-version '0.1.0'
+name 'kaiser-systemupdate'
+version '0.1.1'
 source 'git://github.com/franz-josef-kaiser/puppet-system-update.git'
 author 'Franz Josef Kaiser'
 license 'MIT'

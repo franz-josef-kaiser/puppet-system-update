@@ -7,7 +7,7 @@ Installs the latest versions of `yum`, `rpm`, `make` and `curl`.
 
 Open your preferred console/terminal/bash/shell
 
-    puppet module install wcm-system-update --target-dir puppet/modules --debug --verbose
+    puppet module install kaiser-systemupdate --target-dir puppet/modules --debug --verbose
 
 If you want to reinstall it, use the `--force` argument as well.
 

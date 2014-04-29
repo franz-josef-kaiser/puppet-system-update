@@ -1,0 +1,6 @@
+## IDEs
+# PHPStorm
+.idea
+
+# Puppet Package
+pkg

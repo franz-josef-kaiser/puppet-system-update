@@ -1,0 +1,21 @@
+{
+  "name": "wcm-systemupdate",
+  "version": "0.1.0",
+  "source": "git://github.com/franz-josef-kaiser/puppet-system-update.git",
+  "author": "Franz Josef Kaiser",
+  "license": "MIT",
+  "summary": "System Update",
+  "description": "Update apt-get list, install yum, rpm, make and cURL",
+  "project_page": "https://github.com/franz-josef-kaiser/puppet-system-update",
+  "dependencies": [
+
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Modulefile": "6506e815fcd3e356bd54249af886015c",
+    "README.md": "8103edf4a9bb29b4e599c38a507243a3",
+    "manifests/init.pp": "17eac5e6831b98dfeedd00c3b05854d0"
+  }
+}
