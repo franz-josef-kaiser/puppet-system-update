@@ -27,6 +27,13 @@ In your main `site.pp` file, simply add.
 
 Nothing else to do.
 
+To ensure that it runs _before_ any other Classes during provisioning, add it like this:
+
+  Class['systemupdate']
+  -> Class['Apache']
+
+Not much else to say here. Have fun.
+
 ---
 
 **License:** MIT
