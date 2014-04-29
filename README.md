@@ -15,7 +15,7 @@ If you want to reinstall it, use the `--force` argument as well.
 
 In your main `site.pp` file, simply add.
 
-    include system-update
+    include systemupdate
 
 Nothing else to do.
 
