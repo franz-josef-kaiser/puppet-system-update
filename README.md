@@ -4,8 +4,7 @@
 It removes no longer needed packages and fixes broken ones, both using `apt-get`.
 Finally it installs the latest versions of the following packages.
 
- * `yum`
- * `rpm`
+ * `yum` (only CentOS)
  * `make`
  * `curl`
  * `chkconfig`

@@ -43,12 +43,6 @@ class systemupdate {
           require => Exec['apt-autoclean'],
         }
       }
-      if ! defined( Package['rpm'] ) {
-        package { 'rpm':
-          ensure  => 'present',
-          require => Exec['apt-autoclean'],
-        }
-      }
     }
   }
 }
