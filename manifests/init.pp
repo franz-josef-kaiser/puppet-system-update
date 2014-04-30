@@ -22,18 +22,6 @@ class systemupdate {
       require => Exec['apt-autoclean'],
     }
   }
-  if ! defined( Package['yum'] ) {
-    package { 'yum':
-      ensure  => 'present',
-      require => Exec['apt-autoclean'],
-    }
-  }
-  if ! defined( Package['rpm'] ) {
-    package { 'rpm':
-      ensure  => 'present',
-      require => Exec['apt-autoclean'],
-    }
-  }
   if ! defined( Package['make'] ) {
     package { 'make':
       ensure  => 'present',
@@ -44,6 +32,23 @@ class systemupdate {
     package { 'chkconfig':
       ensure  => 'present',
       require => Exec['apt-autoclean'],
+    }
+  }
+
+  case $operatingsystem {
+    centos: {
+      if ! defined( Package['yum'] ) {
+        package { 'yum':
+          ensure  => 'present',
+          require => Exec['apt-autoclean'],
+        }
+      }
+      if ! defined( Package['rpm'] ) {
+        package { 'rpm':
+          ensure  => 'present',
+          require => Exec['apt-autoclean'],
+        }
+      }
     }
   }
 }
