@@ -1,7 +1,8 @@
 # WCM System Update
 
-*Description:* Updates your Vagrant & Puppet powered server with the latest `apt-get` Package list.
-Installs the latest versions of:
+*Description:* Updates your Vagrant & Puppet powered server with the latest `apt-get` package list.
+It removes no longer needed packages and fixes broken ones, both using `apt-get`.
+Finally it installs the latest versions of the following packages.
 
  * `yum`
  * `rpm`
@@ -9,7 +10,7 @@ Installs the latest versions of:
  * `curl`
  * `chkconfig`
 
-Module on the [Puppet Forge](https://forge.puppetlabs.com/kaiser/systemupdate).
+The module on the [Puppet Forge](https://forge.puppetlabs.com/kaiser/systemupdate).
 
 ## Install
 
@@ -29,8 +30,9 @@ Nothing else to do.
 
 To ensure that it runs _before_ any other Classes during provisioning, add it like this:
 
-  Class['systemupdate']
-  -> Class['Apache']
+    # @example Dummy code
+    Class['systemupdate']
+    -> Package['apache2']
 
 Not much else to say here. Have fun.
 
