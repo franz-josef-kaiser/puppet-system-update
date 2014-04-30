@@ -4,35 +4,34 @@ class systemupdate {
     command => '/usr/bin/apt-get update'
   }
 
-  # Install yum, rpm, make, cURL
-  exec { 'install-yum':
-    command  => '/usr/bin/apt-get install --yes yum',
-    provider => shell,
-    onlyif   => 'command -v yum | grep -cim1 "yum"',
-    require  => Exec['apt-get-update']
+  if ! defined( Package['curl'] ) {
+    package { 'curl':
+      ensure  => 'present',
+      require => Exec['apt-get-update'],
+    }
   }
-  exec { 'install-rpm':
-    command => '/usr/bin/apt-get install rpm',
-    provider => shell,
-    onlyif   => 'command -v rpm | grep -cim1 "rpm"',
-    require  => Exec['install-yum']
+  if ! defined( Package['yum'] ) {
+    package { 'yum':
+      ensure  => 'present',
+      require => Exec['apt-get-update'],
+    }
   }
-  exec { 'install-make':
-    command => '/usr/bin/apt-get install --yes make',
-    provider => shell,
-    onlyif   => 'command -v make | grep -cim1 "make"',
-    require  => Exec['install-yum']
+  if ! defined( Package['rpm'] ) {
+    package { 'rpm':
+      ensure  => 'present',
+      require => Exec['apt-get-update'],
+    }
   }
-  exec { 'install-cURL':
-    command => '/usr/bin/apt-get install --yes curl',
-    provider => shell,
-    onlyif   => 'command -v curl | grep -cim1 "curl"',
-    require  => Exec['install-yum']
+  if ! defined( Package['make'] ) {
+    package { 'make':
+      ensure  => 'present',
+      require => Exec['apt-get-update'],
+    }
   }
-  exec { 'install-chkconfig':
-    command => '/usr/bin/apt-get install --yes chkconfig',
-    provider => shell,
-    onlyif   => 'command -v chkconfig | grep -cim1 "chkconfig"',
-    require  => Exec['install-yum']
+  if ! defined( Package['chkconfig'] ) {
+    package { 'chkconfig':
+      ensure  => 'present',
+      require => Exec['apt-get-update'],
+    }
   }
 }
